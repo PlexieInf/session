@@ -1,6 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8">
 <script>
-// Protection layer
 (function(){
   document.addEventListener('contextmenu',function(e){e.preventDefault();});
   document.addEventListener('keydown',function(e){
@@ -23,7 +22,6 @@
   var _b=_c.join('');
   var _bytes=new Uint8Array(atob(_b).split('').map(function(c){return c.charCodeAt(0);}));
   var _html=new TextDecoder('utf-8').decode(_bytes);
-  // Write decoded HTML into THIS document (same origin, no iframe)
   document.open('text/html','replace');
   document.write(_html);
   document.close();
